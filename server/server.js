@@ -15,7 +15,7 @@ const app = express()
 app.use(helmet())
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "https://startupstack-api.onrender.com",
+    origin: process.env.CLIENT_URL || "https://startupstack-v8rm.vercel.app/",
     credentials: true,
   }),
 )
