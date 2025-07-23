@@ -37,7 +37,7 @@ const HomePage = () => {
       if (industry !== "all") params.append("industry", industry)
       if (scale !== "all") params.append("scale", scale)
 
-      const response = await axios.get(`/api/stack/list?${params}`)
+      const response = await axios.get(`https://startupstack-api.onrender.com/api/stack/list?${params}`)
       setStacks(response.data.stacks)
       setPagination(response.data.pagination)
     } catch (error) {
