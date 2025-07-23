@@ -26,7 +26,7 @@ const AdminDashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const response = await axios.get("/api/admin/stats")
+      const response = await axios.get("https://startupstack-api.onrender.com/api/admin/stats")
       setStats(response.data.stats)
     } catch (error) {
       toast.error("Failed to fetch stats")
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
 
   const fetchContributions = async () => {
     try {
-      const response = await axios.get(`/api/admin/contributions?status=${activeTab}`)
+      const response = await axios.get(`https://startupstack-api.onrender.com/api/admin/contributions?status=${activeTab}`)
       setContributions(response.data.contributions)
     } catch (error) {
       toast.error("Failed to fetch contributions")
@@ -46,7 +46,7 @@ const AdminDashboard = () => {
 
   const handleReview = async (contributionId, action, adminNotes = "") => {
     try {
-      await axios.post(`/api/admin/contributions/${contributionId}/review`, {
+      await axios.post(`https://startupstack-api.onrender.com/api/admin/contributions/${contributionId}/review`, {
         action,
         adminNotes,
       })
