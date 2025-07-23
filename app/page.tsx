@@ -52,7 +52,7 @@ export default function HomePage() {
 
   const fetchStacks = async () => {
     try {
-      const response = await fetch("/api/stacks")
+      const response = await fetch("https://startupstack-api.onrender.com/api/stacks")
       const data = await response.json()
       setStacks(data)
       setLoading(false)
@@ -64,7 +64,7 @@ export default function HomePage() {
 
   const fetchBookmarks = async () => {
     try {
-      const response = await fetch("/api/bookmarks", {
+      const response = await fetch("https://startupstack-api.onrender.com/api/bookmarks", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
