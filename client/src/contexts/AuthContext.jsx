@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
     const checkAuth = async () => {
       if (token) {
         try {
-          const response = await axios.get("/api/auth/profile")
+          const response = await axios.get("https://startupstack-api.onrender.com/api/auth/profile")
           setUser(response.data.user)
           localStorage.setItem("user", JSON.stringify(response.data.user))
         } catch (error) {
@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post("/api/auth/login", { email, password })
+      const response = await axios.post("https://startupstack-api.onrender.com/api/auth/login", { email, password })
       const { token: newToken, user: userData } = response.data
 
       localStorage.setItem("token", newToken)
@@ -74,7 +74,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (username, email, password) => {
     try {
-      const response = await axios.post("/api/auth/signup", {
+      const response = await axios.post("https://startupstack-api.onrender.com/api/auth/signup", {
         username,
         email,
         password,
