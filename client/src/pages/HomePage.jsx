@@ -50,7 +50,7 @@ const HomePage = () => {
 
   const fetchBookmarks = async () => {
     try {
-      const response = await axios.get("/api/stack/user/bookmarks")
+      const response = await axios.get("https://startupstack-api.onrender.com/api/stack/user/bookmarks")
       const bookmarkIds = new Set(response.data.bookmarks.map((b) => b._id))
       setBookmarkedStacks(bookmarkIds)
     } catch (error) {
