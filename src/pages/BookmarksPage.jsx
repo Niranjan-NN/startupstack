@@ -17,7 +17,7 @@ const BookmarksPage = () => {
 
   const fetchBookmarks = async () => {
     try {
-      const response = await axios.get("/api/stack/user/bookmarks")
+      const response = await axios.get("https://startupstack-api.onrender.com/api/stack/user/bookmarks")
       setBookmarks(response.data.bookmarks)
     } catch (error) {
       toast.error("Failed to fetch bookmarks")
