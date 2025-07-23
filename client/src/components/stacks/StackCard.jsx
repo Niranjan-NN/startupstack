@@ -23,7 +23,7 @@ const StackCard = ({ stack, isBookmarked: initialBookmarked = false, onBookmarkC
 
     setBookmarkLoading(true)
     try {
-      const response = await axios.post("/api/stack/bookmark", {
+      const response = await axios.post("https://startupstack-api.onrender.com/api/stack/bookmark", {
         stackId: stack._id,
       })
 
