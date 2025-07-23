@@ -25,7 +25,7 @@ const StackDetailPage = () => {
 
   const fetchStack = async () => {
     try {
-      const response = await axios.get(`/api/stack/${id}`)
+      const response = await axios.get(`https://startupstack-api.onrender.com/api/stack/${id}`)
       setStack(response.data.stack)
     } catch (error) {
       toast.error("Failed to fetch stack details")
@@ -37,7 +37,7 @@ const StackDetailPage = () => {
 
   const checkBookmarkStatus = async () => {
     try {
-      const response = await axios.get("/api/stack/user/bookmarks")
+      const response = await axios.get("https://startupstack-api.onrender.com/api/stack/user/bookmarks")
       const bookmarkIds = response.data.bookmarks.map((b) => b._id)
       setIsBookmarked(bookmarkIds.includes(id))
     } catch (error) {
@@ -53,7 +53,7 @@ const StackDetailPage = () => {
 
     setBookmarkLoading(true)
     try {
-      const response = await axios.post("/api/stack/bookmark", {
+      const response = await axios.post("https://startupstack-api.onrender.com/api/stack/bookmark", {
         stackId: id,
       })
 
