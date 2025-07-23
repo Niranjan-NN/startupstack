@@ -25,7 +25,7 @@ const StackDetailPage = () => {
 
   const fetchStack = async () => {
     try {
-      const response = await axios.get(`/api/stack/${id}`)
+      const response = await axios.get(`https://startupstack-api.onrender.com/api/stack/${id}`)
       setStack(response.data.stack)
     } catch (error) {
       toast.error("Failed to fetch stack details")
